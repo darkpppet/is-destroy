@@ -1,0 +1,42 @@
+body {
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; 
+}
+
+.flex-container-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.box-name {
+    margin-bottom: 0px;
+}
+
+.arrow-box {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 0px;
+}
+
+.setting-container {
+    display: inline-block;
+    width: auto;
+}
+
+.set-box {
+    text-align: left;
+    margin: auto;
+}
+
+.margin-10 {
+    margin: 10px;
+}
