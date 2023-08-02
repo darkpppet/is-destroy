@@ -1,8 +1,32 @@
-body {
-    text-align: center;
-    width: 50%;
-    margin: auto;
-    font-family: 'IBM Plex Sans KR', sans-serif;
+@media screen and (min-width: 1024px) {
+    body {
+        text-align: center;
+        width: 50%;
+        margin: auto;
+        font-family: 'IBM Plex Sans KR', sans-serif;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width: 1024px) {
+    body {
+        text-align: center;
+        width: 75%;
+        margin: auto;
+        font-family: 'IBM Plex Sans KR', sans-serif;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        text-align: center;
+        width: 90%;
+        margin: auto;
+        font-family: 'IBM Plex Sans KR', sans-serif;
+    }
+}
+
+.h1 {
+    margin: 20px;
 }
 
 .flex-container {
