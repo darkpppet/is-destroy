@@ -27,6 +27,7 @@ const startButtonClickEvent = () => {
     const isPreventDestroy1617 = isPreventDestroy1617Checkbox.checked;
 
     if (!isInt(startStar) || !isInt(endStar)) {
+        chart.destroy();
         printAlert('숫자(자연수)만 입력해주세요.');
         return;
     }
@@ -34,10 +35,12 @@ const startButtonClickEvent = () => {
     startStar = parseInt(startStar);
     endStar = parseInt(endStar);
 
-    if (startStar < 0 || startStar > 25 || endStar < 0 || endStar > 25) { 
+    if (startStar < 0 || startStar > 25 || endStar < 0 || endStar > 25) {
+        chart.destroy();
         printAlert('0부터 25 사이의 숫자만 입력해주세요.');
         return;
     } else if (startStar > endStar) {
+        chart.destroy();
         printAlert('시작 별이 종료 별보다 클 수 없어요.');
         return;
     }
