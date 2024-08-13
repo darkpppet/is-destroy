@@ -100,7 +100,5 @@ const startButtonClickEvent = () => {
             }
         }
     });
-    
-
 }
 startButton.addEventListener("click", startButtonClickEvent);
