@@ -15,12 +15,13 @@
 
 </head>
 <body>
-    <h1 class="h1">파괴 없이 도달 확률 계산기</h1>
+    <h1 class="h1">파괴 없이 도달 확률 계산기 (구버전)</h1>
 
     <div class="margin-10">
         <p>목표 별 까지 <strong>한 번도 파괴되지 않고</strong> 도달할 확률을 구합니다.</p>
-        <p><a href="https://maplestory.nexon.com/news/update/767" target='_blank'>KMS 1.2.401 스타포스 패치</a>가 반영되어 있습니다.</p>
-        <p>패치 이전 확률로 계산하려면 <a href="/old">여기</a>를 누르세요</p>
+        <p><a href="https://maplestory.nexon.com/news/update/767" target='_blank'>KMS 1.2.401 스타포스 패치</a> <strong>이전 확률</strong>로 계산합니다.</p>
+        <p>패치 이후 확률로 계산하려면 <a href="../">여기</a>를 누르세요</p>
+        <p>찬스타임이 고려되어 있습니다.</p>
         <p>사용 금액은 고려하지 않습니다.</p>
         <p>컴퓨터의 특성 상, 오차가 존재할 수 있습니다.</p>
     </div>
@@ -38,15 +39,11 @@
     </div>
     
     <fieldset class="margin-10">
-        <legend style="margin:10px">설정</legend>
+        <legend>설정</legend>
         <div class="setting-container">
-            <div class="set-box" data-bs-toggle="tooltip" data-bs-placement="bottom" title="성공 확률 5% 증가">
-                <input type="checkbox" id="is-starcatch" class="form-check-input">스타캐치</div>
-            <div class="set-box"><input type="checkbox" id="is-prevent-destroy-1516" class="form-check-input">15→16 파괴방지</div>
+            <div class="set-box"><input type="checkbox" id="is-starcatch" class="form-check-input">스타캐치</div>
+            <div class="set-box"><input type="checkbox" id="is-prevent-destroy-1516" class="form-check-input">15→16 파괴방지 (혹은 썬데이 메이플)</div>
             <div class="set-box"><input type="checkbox" id="is-prevent-destroy-1617" class="form-check-input">16→17 파괴방지</div>
-            <div class="set-box"><input type="checkbox" id="is-prevent-destroy-1718" class="form-check-input">17→18 파괴방지</div>
-            <div class="set-box" data-bs-toggle="tooltip" data-bs-placement="bottom" title="21성 이하에서 스타포스 강화 시 파괴 확률 30% 감소">
-                <input type="checkbox" id="is-sunday" class="form-check-input">선데이 메이플</div>
         </div>
     </fieldset>
     

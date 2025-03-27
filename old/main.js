@@ -7,8 +7,6 @@ const endStarBox = document.getElementById("end-star");
 const isStarcatchCheckbox = document.getElementById("is-starcatch");
 const isPreventDestroy1516Checkbox = document.getElementById("is-prevent-destroy-1516");
 const isPreventDestroy1617Checkbox = document.getElementById("is-prevent-destroy-1617");
-const isPreventDestroy1718Checkbox = document.getElementById("is-prevent-destroy-1718");
-const isSundayCheckbox = document.getElementById("is-sunday");
 
 const startButton = document.getElementById("start");
 const alertAreaDiv = document.getElementById("alert-area");
@@ -27,8 +25,6 @@ const startButtonClickEvent = () => {
     const isStarcatch = isStarcatchCheckbox.checked;
     const isPreventDestroy1516 = isPreventDestroy1516Checkbox.checked;
     const isPreventDestroy1617 = isPreventDestroy1617Checkbox.checked;
-    const isPreventDestroy1718 = isPreventDestroy1718Checkbox.checked;
-    const isSunday = isSundayCheckbox.checked;
 
     if (!isInt(startStar) || !isInt(endStar)) {
         chart.destroy();
@@ -39,9 +35,9 @@ const startButtonClickEvent = () => {
     startStar = parseInt(startStar);
     endStar = parseInt(endStar);
 
-    if (startStar < 0 || startStar > 30 || endStar < 0 || endStar > 30) {
+    if (startStar < 0 || startStar > 25 || endStar < 0 || endStar > 25) {
         chart.destroy();
-        printAlert('0부터 30 사이의 숫자만 입력해주세요.');
+        printAlert('0부터 25 사이의 숫자만 입력해주세요.');
         return;
     } else if (startStar > endStar) {
         chart.destroy();
@@ -49,8 +45,7 @@ const startButtonClickEvent = () => {
         return;
     }
 
-    const result = calc(parseInt(startStar), parseInt(endStar), isStarcatch,
-        isPreventDestroy1516, isPreventDestroy1617, isPreventDestroy1718, isSunday);
+    const result = calc(parseInt(startStar), parseInt(endStar), isStarcatch, isPreventDestroy1516, isPreventDestroy1617);
 
     printAlert(`성공 확률: ${result[0].toFixed(6)}%
                     실패 확률: ${result[1].toFixed(6)}%`);

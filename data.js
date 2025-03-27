@@ -1,36 +1,41 @@
 //
-// Map을 이용한 희소행렬 저장 방식으로 데이터 저장
-// Map.get(시작 별).get(종료 별) = 확률
-// 각 인덱스는 해당 별을 나타냄. 단, 파괴 상태의 인덱스는 -1
+// 배열로 데이터 저장
+// 각 인덱스는 해당 별을 나타냄.
+// 원소도 배열; 0번은 성공확률, 1번은 실패(유지)확률, 2번은 썬데이 반영 실패(유지)확률
 //
 
-const probabilityMatrix = new Map();
-probabilityMatrix.set(-1, new Map()).get(-1).set(-1, 1.000);
-probabilityMatrix.set(15, new Map()).get(15).set(-1, 0.021).set(15, 0.679).set(16, 0.300);
-probabilityMatrix.set(16, new Map()).get(16).set(-1, 0.021).set(15, 0.679).set(17, 0.300);
-probabilityMatrix.set(17, new Map()).get(17).set(-1, 0.021).set(16, 0.679).set(18, 0.300);
-probabilityMatrix.set(18, new Map()).get(18).set(-1, 0.028).set(17, 0.672).set(19, 0.300);
-probabilityMatrix.set(19, new Map()).get(19).set(-1, 0.028).set(18, 0.672).set(20, 0.300);
-probabilityMatrix.set(20, new Map()).get(20).set(-1, 0.070).set(20, 0.630).set(21, 0.300);
-probabilityMatrix.set(21, new Map()).get(21).set(-1, 0.070).set(20, 0.630).set(22, 0.300);
-probabilityMatrix.set(22, new Map()).get(22).set(-1, 0.194).set(21, 0.776).set(23, 0.030);
-probabilityMatrix.set(23, new Map()).get(23).set(-1, 0.294).set(22, 0.686).set(24, 0.020);
-probabilityMatrix.set(24, new Map()).get(24).set(-1, 0.396).set(23, 0.594).set(25, 0.010);
-probabilityMatrix.set(25, new Map()).get(25).set(25, 1.000);
+const probabilityMatrix = [];
+probabilityMatrix[15] = [0.3, 0.679, 0.6853];
+probabilityMatrix[16] = [0.3, 0.679, 0.6853];
+probabilityMatrix[17] = [0.15, 0.782, 0.8024];
+probabilityMatrix[18] = [0.15, 0.782, 0.8024];
+probabilityMatrix[19] = [0.15, 0.765, 0.7905];
+probabilityMatrix[20] = [0.3, 0.595, 0.6265];
+probabilityMatrix[21] = [0.15, 0.7225, 0.76075];
+probabilityMatrix[22] = [0.15, 0.68, 0.68];
+probabilityMatrix[23] = [0.1, 0.72, 0.72];
+probabilityMatrix[24] = [0.1, 0.72, 0.72];
+probabilityMatrix[25] = [0.1, 0.72, 0.72];
+probabilityMatrix[26] = [0.07, 0.744, 0.744];
+probabilityMatrix[27] = [0.05, 0.76, 0.744];
+probabilityMatrix[28] = [0.03, 0.776, 0.776];
+probabilityMatrix[29] = [0.01, 0.792, 0.792];
 
-const probabilityMatrixWithStarcatch = new Map();
-probabilityMatrixWithStarcatch.set(-1, new Map()).get(-1).set(-1, 1.00000);
-probabilityMatrixWithStarcatch.set(15, new Map()).get(15).set(-1, 0.02055).set(15, 0.66445).set(16, 0.31500);
-probabilityMatrixWithStarcatch.set(16, new Map()).get(16).set(-1, 0.02055).set(15, 0.66445).set(17, 0.31500);
-probabilityMatrixWithStarcatch.set(17, new Map()).get(17).set(-1, 0.02055).set(16, 0.66445).set(18, 0.31500);
-probabilityMatrixWithStarcatch.set(18, new Map()).get(18).set(-1, 0.02740).set(17, 0.65760).set(19, 0.31500);
-probabilityMatrixWithStarcatch.set(19, new Map()).get(19).set(-1, 0.02740).set(18, 0.65760).set(20, 0.31500);
-probabilityMatrixWithStarcatch.set(20, new Map()).get(20).set(-1, 0.06850).set(20, 0.61650).set(21, 0.31500);
-probabilityMatrixWithStarcatch.set(21, new Map()).get(21).set(-1, 0.06850).set(20, 0.61650).set(22, 0.31500);
-probabilityMatrixWithStarcatch.set(22, new Map()).get(22).set(-1, 0.19370).set(21, 0.77480).set(23, 0.03150);
-probabilityMatrixWithStarcatch.set(23, new Map()).get(23).set(-1, 0.29370).set(22, 0.68530).set(24, 0.02100);
-probabilityMatrixWithStarcatch.set(24, new Map()).get(24).set(-1, 0.39580).set(23, 0.59370).set(25, 0.01050);
-probabilityMatrixWithStarcatch.set(25, new Map()).get(25).set(25, 1.00000);
-
+const probabilityMatrixWithStarcatch = [];
+probabilityMatrixWithStarcatch[15] = [0.315, 0.66445, 0.670615];
+probabilityMatrixWithStarcatch[16] = [0.315, 0.66445, 0.670615];
+probabilityMatrixWithStarcatch[17] = [0.1575, 0.7751, 0.79532];
+probabilityMatrixWithStarcatch[18] = [0.1575, 0.7751, 0.79532];
+probabilityMatrixWithStarcatch[19] = [0.1575, 0.75825, 0.783525];
+probabilityMatrixWithStarcatch[20] = [0.315, 0.58225, 0.613075];
+probabilityMatrixWithStarcatch[21] = [0.1575, 0.716125, 0.7540375];
+probabilityMatrixWithStarcatch[22] = [0.1575, 0.674, 0.674];
+probabilityMatrixWithStarcatch[23] = [0.105, 0.716, 0.716];
+probabilityMatrixWithStarcatch[24] = [0.105, 0.716, 0.716];
+probabilityMatrixWithStarcatch[25] = [0.105, 0.716, 0.716];
+probabilityMatrixWithStarcatch[26] = [0.0735, 0.7412, 0.7412];
+probabilityMatrixWithStarcatch[27] = [0.0525, 0.758, 0.758];
+probabilityMatrixWithStarcatch[28] = [0.0315, 0.7748, 0.7748];
+probabilityMatrixWithStarcatch[29] = [0.0105, 0.7916, 0.7916];
 
 export {probabilityMatrix, probabilityMatrixWithStarcatch};
