@@ -25,4 +25,4 @@ $\sum\limits_{i=0}^{\infty} f^i s = s \cdot {\cfrac{1 \cdot (1-f^{\infty})}{1-f}
 
 ---
 
-KMS 1.2.401 패치 이전 버전 README는 [여기]()서 확인할 수 있습니다.
+KMS 1.2.401 패치 이전 버전 README는 [여기](https://github.com/darkpppet/is-destroy/blob/main/old/README.md)서 확인할 수 있습니다.
